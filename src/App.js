@@ -1,45 +1,33 @@
-import logo from './logo.svg';
-import React, { useState } from 'react';
-import './index.css'; // or './styles.css' if that's your file name
-
+import React,{useState} from 'react';
 import './App.css';
+import data from'./data'
+import Tours from './tours';
 
-function App() {
-  const[count, setCount]= useState(0);
 
+const App= ()=>{
+  const [tours,setTours]=useState(data)
+  
 
-  function decreaseHandler()
-  {
-     setCount(count-1);
-
+  function removeTour(id) {
+    const newTours=tours.filter(tour=>tour.id !== id );
+    setTours(newTours);
   }
 
-  function increasehandler()
-  {
-    setCount(count+1);
-  }
-  function resetm()
-  {
-    setCount(0);
-  }
-  return (
-    <div className=" w-[100vw] h-[100vh]  justify-center  items-center  bg-[#021847] flex  flex-col text-yellow-500 scale-100 gap-10 ">
-      <div className="text-[#8693af] font-medium text-2xl">Increment and decrement</div>
-      <div className="bg-white flex justify-center gap-12 py-3 rounded-sm text-[25px]">
-        <button onClick={decreaseHandler} className="border-r-4 text-center w-20 border-[#bfbfbf] text-5xl">
-        -
-        </button>
-        <div>       
-         {count}
 
-        </div>
-        <button onClick={increasehandler} className="border-l-4 text-center w-20 border-[#bfbfbf]">
-        +
-        </button>
+  if(tours.length ===0)
+  {
+    return(
+      <div>
+        <h2>No tours left</h2>
+        <button className="btn-white" onClick={()=>setTours(data)}>Refresh</button>
       </div>
-      <div onClick={resetm} className=" bg-[#8693af] rounded-sm text-lg px-5 py-2  ">Reset</div>
-    </div>
-    
+    )
+  }
+
+  return (
+  <div className="app">
+    <Tours tours={tours} removeTour={removeTour}></Tours>
+  </div>
   );
 }
 

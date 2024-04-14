@@ -1,3 +1,88 @@
-@import  "tailwindcss/base";
+/* @import  "tailwindcss/base";
 @import  "tailwindcss/components";
-@import  "tailwindcss/utilities";
+@import  "tailwindcss/utilities"; */
+
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+
+body{
+    min-height:100vh;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.title{
+    font-size: 5  rem;
+    margin : 6 vh;
+    align-items:center;
+    padding: 10vh 40vw;
+    border: 10px blue dashed;
+}
+
+.container{
+    display:flex;
+    align-items: center;
+    justify-content: space-between ;
+    flex-direction:column;
+  }
+
+ .cards{
+    background-color:blanchedalmond;
+    display:flex;
+    align-items:center;
+    justify-content: center ;
+    flex-wrap: wrap;
+
+} 
+.tour-name{
+    font-size:1.5rem;
+}
+
+.card{
+    width: 400px;
+    height:max-content;
+    display:flex;
+    margin :1rem;
+    padding:1 rem ;
+    border-radius:10px;
+    align-items:center;
+    box-shadow: gba(0,0,0,0.24) 0px 3px 8px;
+    flex-direction :column;
+     background-color:aqua; 
+    border: 2px black solid;
+    box-shadow: 10px 5px 5px red;
+
+}
+.image{
+    width: 300px;
+    aspect-ratio:1/1;
+    object-fit: cover;
+}
+.tour-info{
+    margin:20px 10px;
+}
+.tour-price{
+  font-size: 1rem;
+  color: green;
+}
+.read-more{
+    color:blue;
+    cursor:pointer;
+}
+.btn-red{
+    text-align:center;
+    margin-top: 10px;
+    padding :10px 40px;
+    border: 1px solid red;
+    cursor:pointer;
+    border-radius: 10px;
+    background-color:#b4161b21;
+}
+.btn-red:hover{
+    background-color:red ;
+    color:white;
+    transition: all 0.5s ease;
+}
